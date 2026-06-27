@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* Themes */
+body.theme-light {
+  background: #f3f4f6;
+  color: #111827;
+}
+body.theme-dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+body.theme-colorful {
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  color: #0f172a;
+}
+
+/* Layout */
+nav {
+  padding: 1rem 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  display: flex;
+  gap: 1rem;
+}
+body.theme-light nav {
+  background: #111827;
+}
+body.theme-colorful nav {
+  background: rgba(15, 23, 42, 0.85);
+}
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header.hero {
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+body.theme-light header.hero {
+  background: white;
+  color: #111827;
+}
+body.theme-dark header.hero {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+body.theme-colorful header.hero {
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+}
+
+section.card {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+body.theme-dark section.card {
+  background: #020617;
+  border-color: #1f2937;
+}
+body.theme-colorful section.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+}
+
+section.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.order-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f97316;
+  color: #111827;
+}
+body.theme-dark .order-section {
+  background: #f97316;
+  color: #111827;
+}
+body.theme-colorful .order-section {
+  background: #facc15;
+  color: #111827;
+}
+.order-section button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
