@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Multi‑Page Site Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 2rem;
+    }
+    .container { max-width: 900px; margin: auto; }
+    h1, h2 { text-align: center; }
+    label { display: block; margin-top: 1rem; margin-bottom: 0.3rem; }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+    button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: #0f172a;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      margin-top: 1rem;
+    }
+    .output-box {
+      background: #1e293b;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      margin-top: 1rem;
+    }
+    #generated-all {
+      width: 100%;
+      height: 320px;
+      background: #0f172a;
+      color: #e5e7eb;
+      border: none;
+      padding: 1rem;
+      border-radius: 10px;
+      font-family: monospace;
+      resize: vertical;
+    }
+    small { color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Multi‑Page Website Generator</h1>
+
+    <label>Site name</label>
+    <input id="site-name" placeholder="e.g. Shaffer's Market" />
+
+    <label>Pages (comma‑separated)</label>
+    <input id="pages" placeholder="e.g. Home, About, Menu, Contact" />
+
+    <label>Describe your website</label>
+    <textarea id="description" rows="4" placeholder="Type of business, vibe, what sections you want..."></textarea>
+
+    <label>Theme</label>
+    <select id="theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="colorful">Colorful</option>
+    </select>
+
+    <label>
+      <input type="checkbox" id="online-ordering" />
+      Enable online ordering section
+    </label>
+
+    <label>Custom images (optional)</label>
+    <input type="file" id="images" multiple accept="image/*" />
+    <small>Uploaded images will be embedded directly into the generated HTML.</small>
+
+    <button id="generate-btn">Generate Website</button>
+
+    <h2>Homepage Preview</h2>
+    <iframe id="preview"></iframe>
+
+    <h2>Copy Your Generated Code</h2>
+    <div class="output-box">
+      <small>Each file is separated by a comment like: <code>/* index.html */</code></small>
+      <textarea id="generated-all" readonly></textarea>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
